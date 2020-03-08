@@ -1,14 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 const Country = require("./models/Country.model");
+const path = require("path");
 
-app.listen(port, () => {
-  console.log("listening on port " + port);
+app.listen(PORT, () => {
+  console.log("listening on port " + PORT);
 });
 
-const myMongoUri = "mongodb://localhost:27017/country-info";
+const myMongoUri =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/country-info";
 
 mongoose.connect(myMongoUri, {
   useNewUrlParser: true,
@@ -26,6 +28,8 @@ db.once("open", () => {
 });
 
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("/countries", (req, res) => {
   Country.find().then(countries => {

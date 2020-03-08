@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root,
+html,
+body {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: rgb(175, 236, 216);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 2rem;
+}
+
+.form input {
+  border-radius: 2rem;
+  padding: 0.1rem 0.4rem;
+}
+
+.form h2 {
+  font-size: 1.4rem;
+}
+
+.form-section {
+  margin: 0.5rem 0;
+}
+
+button {
+  background: rgb(38, 139, 38);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.3rem;
   color: white;
+  cursor: pointer;
+  margin-top: 0.3rem;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background: rgb(18, 95, 18);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display-wrapper {
+  text-align: center;
+  max-height: 40vh;
+  overflow: auto;
+  min-width: 40vw;
+}
+
+.display-wrapper h2 {
+  background: rgb(38, 139, 38);
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+table {
+  background: white;
+  padding: 2rem;
+  width: 100%;
+}
+
+td {
+  padding: 1rem 2rem;
 }

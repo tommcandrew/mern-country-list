@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewCountryForm from "./components/NewCountryForm";
 import CountryDisplay from "./components/CountryDisplay";
+import "./App.css";
 
 function App() {
   const [countries, setCountries] = useState(null);
