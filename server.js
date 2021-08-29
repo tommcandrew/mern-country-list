@@ -38,7 +38,6 @@ app.get("/countries", (req, res) => {
 });
 
 app.post("/addcountry", (req, res) => {
-  console.log("received request");
   const { name, capital } = req.body;
   const country = new Country({ name, capital });
   country
